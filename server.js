@@ -85,7 +85,7 @@ app.post("/api/prices", (req, res) => {
     const password =
         req.headers["x-owner-password"];
 
-    if (password !== "Srinivas@2026") {
+    if (password !== "Srinivas@9666") {
 
         return res.status(401).json({
             success: false,
