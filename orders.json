@@ -1,0 +1,138 @@
+[
+  {
+    "id": 1786698340510,
+    "date": "14/8/2026, 2:35:40 pm",
+    "customerName": "veerla raghava",
+    "phone": "8096992396",
+    "address": "fci colony kakinada",
+    "orderType": "Delivery",
+    "items": [
+      {
+        "name": "Chicken",
+        "price": 260,
+        "quantity": 1
+      },
+      {
+        "name": "Chicken Legs",
+        "price": 50,
+        "quantity": 1
+      }
+    ],
+    "total": 310,
+    "status": "Cancelled"
+  },
+  {
+    "id": 1786703892137,
+    "date": "14/8/2026, 4:08:12 pm",
+    "status": "Cancelled",
+    "customerName": "Veerla Raghava",
+    "phone": "9785674549",
+    "address": "rtyfvgfuhkhugyu",
+    "orderType": "Delivery",
+    "items": [
+      {
+        "name": "Chicken",
+        "price": 260,
+        "quantity": 0.38461538461538464,
+        "money": 100
+      },
+      {
+        "name": "Boneless Chicken",
+        "price": 300,
+        "quantity": 1
+      }
+    ],
+    "total": 400
+  },
+  {
+    "id": 1788597350679,
+    "date": "5/9/2026, 2:05:50 pm",
+    "status": "Pending",
+    "name": "Veerla Raghava",
+    "phone": "443534545",
+    "address": "ccvvbfh",
+    "orderType": "Delivery",
+    "items": [
+      {
+        "name": "Chicken",
+        "price": 260,
+        "quantity": 1
+      }
+    ],
+    "total": 260
+  },
+  {
+    "id": 1788597483207,
+    "date": "5/9/2026, 2:08:03 pm",
+    "status": "Pending",
+    "name": "Veerla Raghava",
+    "phone": "8096992396",
+    "address": "zdfgfgdg",
+    "orderType": "Delivery",
+    "items": [
+      {
+        "name": "Chicken",
+        "price": 260,
+        "quantity": 0.7692307692307693,
+        "money": 200
+      },
+      {
+        "name": "Boneless Chicken",
+        "price": 300,
+        "quantity": 1
+      }
+    ],
+    "total": 500
+  },
+  {
+    "id": 1788598148172,
+    "date": "5/9/2026, 2:19:08 pm",
+    "status": "Pending",
+    "name": "Veerla Raghava",
+    "phone": "8096992396",
+    "address": "jyjhdhgfjjhk",
+    "orderType": "Delivery",
+    "items": [
+      {
+        "name": "Chicken",
+        "price": 260,
+        "quantity": 1.7307692307692308,
+        "money": 450
+      },
+      {
+        "name": "Boneless Chicken",
+        "price": 300,
+        "quantity": 1
+      }
+    ],
+    "total": 750
+  },
+  {
+    "id": 1788602003406,
+    "date": "5/9/2026, 3:23:23 pm",
+    "status": "Pending",
+    "name": "Veerla Raghava",
+    "phone": "8096992396",
+    "address": "Lakshmi narya swamy",
+    "orderType": "Delivery",
+    "deliveryArea": "Chandrampalem",
+    "items": [
+      {
+        "name": "Chicken",
+        "price": 260,
+        "quantity": 1,
+        "type": "normal"
+      },
+      {
+        "name": "Chicken",
+        "price": 260,
+        "quantity": 0.38461538461538464,
+        "money": 100,
+        "type": "money"
+      }
+    ],
+    "itemsTotal": 360,
+    "deliveryCharge": 0,
+    "total": 360
+  }
+]
