@@ -113,7 +113,9 @@ app.post("/api/orders", (req, res) => {
 // ===============================
 // START SERVER
 // ===============================
-
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/shop.html");
+});
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, "0.0.0.0", () => {
