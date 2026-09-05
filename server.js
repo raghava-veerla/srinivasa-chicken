@@ -13,7 +13,7 @@ const DEFAULT_PRICES = {
     chicken: 260,
     bontha: 340,
     pharam: 250,
-    boneless: 300,
+    boneless: 270,
     legs: 50,
     wings: 40
 };
