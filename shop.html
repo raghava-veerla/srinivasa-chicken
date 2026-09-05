@@ -7,301 +7,215 @@
 <title>Srinivas Chicken - FK Palem</title>
 
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-    font-family:Arial,sans-serif;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-body{
-    background:#fff5f5;
-    color:#222;
+body {
+    background: #fff7f7;
+    color: #222;
 }
 
-header{
-    background:#d71920;
-    color:white;
-    padding:15px;
-    text-align:center;
-    position:sticky;
-    top:0;
-    z-index:100;
+header {
+    background: #d32f2f;
+    color: white;
+    padding: 15px;
+    text-align: center;
 }
 
-header h1{
-    font-size:25px;
+header h1 {
+    font-size: 28px;
 }
 
-header p{
-    margin-top:5px;
-    font-size:14px;
+header p {
+    margin-top: 5px;
 }
 
-.cart-top{
-    margin-top:10px;
-    font-size:17px;
-    font-weight:bold;
+.hero {
+    padding: 25px 15px;
+    text-align: center;
+    background: #ffeaea;
 }
 
-.hero{
-    text-align:center;
-    padding:30px 15px;
-    background:#ffe5e5;
+.hero h2 {
+    color: #c62828;
+    font-size: 28px;
 }
 
-.hero h2{
-    font-size:30px;
-    color:#d71920;
-    margin-bottom:10px;
+.hero p {
+    margin-top: 8px;
 }
 
-.hero p{
-    font-size:16px;
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 15px;
 }
 
-.info{
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    flex-wrap:wrap;
-    margin-top:20px;
+.product {
+    background: white;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px #ddd;
 }
 
-.info span{
-    background:white;
-    padding:8px 12px;
-    border-radius:20px;
-    box-shadow:0 2px 5px #ddd;
+.product h3 {
+    color: #c62828;
+    margin-bottom: 5px;
 }
 
-.container{
-    max-width:900px;
-    margin:auto;
-    padding:20px 15px;
+.price {
+    font-weight: bold;
+    margin-bottom: 12px;
 }
 
-h2.section-title{
-    margin:20px 0 15px;
-    color:#d71920;
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
-.products{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:15px;
+button {
+    border: none;
+    border-radius: 7px;
+    padding: 10px 14px;
+    background: #d32f2f;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.product{
-    background:white;
-    border-radius:12px;
-    padding:15px;
-    box-shadow:0 2px 8px #ddd;
+button:hover {
+    background: #b71c1c;
 }
 
-.product h3{
-    margin-bottom:7px;
+.cart {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px #ddd;
 }
 
-.price{
-    color:#d71920;
-    font-size:18px;
-    font-weight:bold;
-    margin-bottom:12px;
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    gap: 10px;
 }
 
-.options{
-    display:flex;
-    flex-wrap:wrap;
-    gap:7px;
+.qty button {
+    padding: 5px 9px;
 }
 
-.options button{
-    border:1px solid #d71920;
-    background:white;
-    color:#d71920;
-    padding:8px 10px;
-    border-radius:7px;
-    cursor:pointer;
+.summary {
+    margin-top: 15px;
+    line-height: 1.8;
 }
 
-.options button:hover{
-    background:#d71920;
-    color:white;
+.total {
+    font-size: 22px;
+    font-weight: bold;
+    color: #c62828;
 }
 
-.qty{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
-    margin-top:12px;
+.form-box {
+    background: white;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #ddd;
 }
 
-.qty button{
-    width:35px;
-    height:35px;
-    border:none;
-    border-radius:50%;
-    background:#d71920;
-    color:white;
-    font-size:20px;
-    cursor:pointer;
+input, select, textarea {
+    width: 100%;
+    padding: 11px;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 16px;
 }
 
-.cart-box{
-    background:white;
-    padding:18px;
-    border-radius:12px;
-    box-shadow:0 2px 8px #ddd;
-    margin-top:25px;
+label {
+    font-weight: bold;
 }
 
-.cart-item{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    border-bottom:1px solid #ddd;
-    padding:10px 0;
-    gap:10px;
+.radio-group {
+    margin: 10px 0;
 }
 
-.cart-item:last-child{
-    border-bottom:none;
+.radio-group label {
+    font-weight: normal;
+    display: block;
+    margin: 8px 0;
 }
 
-.remove{
-    background:#333;
-    color:white;
-    border:none;
-    padding:5px 8px;
-    border-radius:5px;
+.radio-group input {
+    width: auto;
+    margin-right: 8px;
 }
 
-.delivery-note{
-    background:#fff4d6;
-    border-left:5px solid #f0a000;
-    padding:15px;
-    margin-top:20px;
-    border-radius:8px;
-    line-height:1.5;
+.delivery-info {
+    background: #fff3cd;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
-.delivery-status{
-    margin-top:12px;
-    padding:10px;
-    border-radius:7px;
-    background:#f1f1f1;
-    font-weight:bold;
+.upi-box {
+    background: #f3f3f3;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
-.bill{
-    margin-top:20px;
-    background:#fafafa;
-    padding:15px;
-    border-radius:8px;
+.hidden {
+    display: none;
 }
 
-.bill-row{
-    display:flex;
-    justify-content:space-between;
-    padding:6px 0;
+.success {
+    background: #d4edda;
+    color: #155724;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 10px;
 }
 
-.final{
-    border-top:2px solid #ddd;
-    margin-top:8px;
-    padding-top:10px;
-    font-size:20px;
-    font-weight:bold;
-    color:#d71920;
+.error {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 10px;
 }
 
-.form-box{
-    background:white;
-    margin-top:25px;
-    padding:18px;
-    border-radius:12px;
-    box-shadow:0 2px 8px #ddd;
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 25px;
+    background: #222;
+    color: white;
 }
 
-.form-box label{
-    display:block;
-    margin-top:12px;
-    margin-bottom:5px;
-    font-weight:bold;
-}
-
-.form-box input,
-.form-box select{
-    width:100%;
-    padding:11px;
-    border:1px solid #ccc;
-    border-radius:7px;
-    font-size:16px;
-}
-
-.radio-box{
-    display:flex;
-    gap:20px;
-    margin-top:10px;
-    flex-wrap:wrap;
-}
-
-.radio-box label{
-    margin:0;
-    font-weight:normal;
-}
-
-.place-order{
-    width:100%;
-    margin-top:20px;
-    padding:14px;
-    background:#25d366;
-    color:white;
-    border:none;
-    border-radius:8px;
-    font-size:18px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.place-order:hover{
-    background:#1ebe5d;
-}
-
-.upi-box{
-    display:none;
-    background:#eefbf2;
-    border:1px solid #8bd5a5;
-    padding:12px;
-    margin-top:10px;
-    border-radius:8px;
-    line-height:1.6;
-}
-
-.empty{
-    text-align:center;
-    padding:20px;
-    color:#777;
-}
-
-footer{
-    margin-top:30px;
-    background:#222;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
-
-@media(max-width:500px){
-    .hero h2{
-        font-size:25px;
+@media(max-width:600px) {
+    header h1 {
+        font-size: 23px;
     }
 
-    .cart-item{
-        flex-direction:column;
-        align-items:flex-start;
+    .hero h2 {
+        font-size: 23px;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 </style>
@@ -310,151 +224,205 @@ footer{
 <body>
 
 <header>
-
     <h1>🐔 Srinivas Chicken</h1>
-
     <p>📍 FK Palem</p>
-
     <p>📞 9666709655</p>
-
-    <div class="cart-top">
-        🛒 Cart: <span id="cartCount">0</span>
-    </div>
-
 </header>
 
-
 <section class="hero">
-
-    <h2>Fresh Chicken Everyday!</h2>
-
-    <p>Fresh • Clean • Quality Chicken</p>
-
-    <div class="info">
-        <span>🍗 Fresh Chicken</span>
-        <span>🚚 Sunday Delivery</span>
-        <span>🏪 Pickup Available</span>
-    </div>
-
+    <h2>Fresh Chicken Everyday 🍗</h2>
+    <p>Quality chicken at the best price</p>
 </section>
-
 
 <div class="container">
 
-    <h2 class="section-title">🍗 Chicken</h2>
+    <div class="delivery-info">
+        🛵 <b>Home Delivery:</b><br>
+        Sunday only<br>
+        Chandrampalem, Kandarada, Fakruddinpalem,
+        Viravada, Kumarapuram & Jalluru<br><br>
 
-    <div id="products" class="products"></div>
+        Orders below ₹150 → <b>₹15 delivery</b><br>
+        Orders ₹150 or above → <b>FREE delivery</b>
+    </div>
+
+    <!-- PRODUCTS -->
+
+    <div class="product">
+        <h3>🍗 Broiler Chicken</h3>
+        <div class="price" id="chickenPrice">Loading...</div>
+
+        <div class="options">
+            <button onclick="addMoneyProduct('Broiler Chicken', 50, 'chicken')">
+                ₹50
+            </button>
+
+            <button onclick="addMoneyProduct('Broiler Chicken', 100, 'chicken')">
+                ₹100
+            </button>
+
+            <button onclick="addMoneyProduct('Broiler Chicken', 150, 'chicken')">
+                ₹150
+            </button>
+
+            <button onclick="addMoneyProduct('Broiler Chicken', 200, 'chicken')">
+                ₹200
+            </button>
+
+            <button onclick="addMoneyProduct('Broiler Chicken', 250, 'chicken')">
+                ₹250
+            </button>
+
+            <button onclick="addKgProduct('Broiler Chicken', 0.5, 'chicken')">
+                ½ KG
+            </button>
+
+            <button onclick="addKgProduct('Broiler Chicken', 1, 'chicken')">
+                1 KG
+            </button>
+        </div>
+    </div>
+
+
+    <div class="product">
+        <h3>🐔 Bontha Kodi</h3>
+        <div class="price" id="bonthaPrice">Loading...</div>
+
+        <div class="options">
+            <button onclick="addMoneyProduct('Bontha Kodi', 100, 'bontha')">
+                ₹100
+            </button>
+
+            <button onclick="addMoneyProduct('Bontha Kodi', 150, 'bontha')">
+                ₹150
+            </button>
+
+            <button onclick="addMoneyProduct('Bontha Kodi', 200, 'bontha')">
+                ₹200
+            </button>
+
+            <button onclick="addMoneyProduct('Bontha Kodi', 250, 'bontha')">
+                ₹250
+            </button>
+
+            <button onclick="addKgProduct('Bontha Kodi', 0.5, 'bontha')">
+                ½ KG
+            </button>
+
+            <button onclick="addKgProduct('Bontha Kodi', 1, 'bontha')">
+                1 KG
+            </button>
+        </div>
+    </div>
+
+
+    <div class="product">
+        <h3>🐔 Pharam Kodi</h3>
+        <div class="price" id="pharamPrice">Loading...</div>
+
+        <div class="options">
+            <button onclick="addFixedProduct('Pharam Kodi', 'pharam')">
+                Add 1 Hen
+            </button>
+        </div>
+    </div>
+
+
+    <div class="product">
+        <h3>🍖 Boneless Chicken</h3>
+        <div class="price" id="bonelessPrice">Loading...</div>
+
+        <div class="options">
+            <button onclick="addKgProduct('Boneless Chicken', 1, 'boneless')">
+                1 KG
+            </button>
+        </div>
+    </div>
+
+
+    <div class="product">
+        <h3>🍗 Chicken Legs</h3>
+        <div class="price" id="legsPrice">Loading...</div>
+
+        <div class="options">
+            <button onclick="addFixedProduct('Chicken Legs', 'legs')">
+                Add
+            </button>
+        </div>
+    </div>
+
+
+    <div class="product">
+        <h3>🍗 Chicken Wings</h3>
+        <div class="price" id="wingsPrice">Loading...</div>
+
+        <div class="options">
+            <button onclick="addFixedProduct('Chicken Wings', 'wings')">
+                Add
+            </button>
+        </div>
+    </div>
 
 
     <!-- CART -->
 
-    <div class="cart-box">
+    <div class="cart">
 
         <h2>🛒 Your Cart</h2>
 
-        <div id="cartItems" class="empty">
-            Your cart is empty
+        <div id="cartItems">
+            <p>Your cart is empty.</p>
         </div>
 
+        <div class="summary">
 
-        <!-- DELIVERY INFORMATION -->
+            <p>
+                Items Total:
+                ₹<span id="itemsTotal">0</span>
+            </p>
 
-        <div class="delivery-note">
+            <p>
+                Delivery Charge:
+                ₹<span id="deliveryCharge">0</span>
+            </p>
 
-            <b>🚚 Delivery Information</b>
-
-            <br><br>
-
-            📅 <b>Delivery Available Only On Sunday</b>
-
-            <br><br>
-
-            📍 <b>Delivery Available Only In:</b><br>
-
-            Chandrampalem, Kandarada, Fakruddinpalem,
-            Viravada, Kumarapuram & Jalluru.
-
-            <br><br>
-
-            💰 <b>Delivery Charge:</b><br>
-
-            ₹15 for orders below ₹150.
-
-            <br>
-
-            🆓 <b>FREE Delivery:</b><br>
-
-            Orders ₹150 and above.
-
-            <br><br>
-
-            🏪 <b>Shop Pickup:</b><br>
-
-            Available every day with no delivery charge.
-
-        </div>
-
-
-        <div id="deliveryStatus" class="delivery-status"></div>
-
-
-        <!-- BILL -->
-
-        <div class="bill">
-
-            <h3>🧾 Bill Summary</h3>
-
-            <div class="bill-row">
-                <span>Items Total</span>
-                <span>₹<span id="itemsTotal">0</span></span>
-            </div>
-
-            <div class="bill-row">
-                <span>Delivery Charge</span>
-                <span>₹<span id="deliveryCharge">0</span></span>
-            </div>
-
-            <div class="final">
-                <div class="bill-row">
-                    <span>Final Total</span>
-                    <span>₹<span id="finalTotal">0</span></span>
-                </div>
-            </div>
+            <p class="total">
+                Grand Total:
+                ₹<span id="grandTotal">0</span>
+            </p>
 
         </div>
 
     </div>
 
 
-    <!-- CUSTOMER DETAILS -->
+    <!-- ORDER FORM -->
 
     <div class="form-box">
 
-        <h2>👤 Customer Details</h2>
+        <h2>📦 Place Order</h2>
 
+        <br>
 
-        <label>Full Name</label>
-
+        <label>Your Name</label>
         <input
-            id="name"
             type="text"
+            id="customerName"
             placeholder="Enter your name"
         >
 
-
         <label>Phone Number</label>
-
         <input
-            id="phone"
             type="tel"
-            placeholder="Enter phone number"
+            id="customerPhone"
             maxlength="10"
+            placeholder="10 digit mobile number"
         >
 
 
         <label>Order Type</label>
 
-        <div class="radio-box">
+        <div class="radio-group">
 
             <label>
                 <input
@@ -462,9 +430,9 @@ footer{
                     name="orderType"
                     value="delivery"
                     checked
-                    onchange="updateBill()"
+                    onchange="updateDelivery()"
                 >
-                🚚 Delivery
+                🛵 Home Delivery
             </label>
 
             <label>
@@ -472,9 +440,9 @@ footer{
                     type="radio"
                     name="orderType"
                     value="pickup"
-                    onchange="updateBill()"
+                    onchange="updateDelivery()"
                 >
-                🏪 Shop Pickup
+                🏪 Pickup
             </label>
 
         </div>
@@ -482,93 +450,118 @@ footer{
 
         <div id="deliveryFields">
 
-            <label>Delivery Area</label>
+            <label>Select Area</label>
 
-            <select id="area">
+            <select id="area" onchange="updateDelivery()">
 
                 <option value="">
-                    Select Delivery Area
+                    Select your area
                 </option>
 
-                <option>Chandrampalem</option>
+                <option value="Chandrampalem">
+                    Chandrampalem
+                </option>
 
-                <option>Kandarada</option>
+                <option value="Kandarada">
+                    Kandarada
+                </option>
 
-                <option>Fakruddinpalem</option>
+                <option value="Fakruddinpalem">
+                    Fakruddinpalem
+                </option>
 
-                <option>Viravada</option>
+                <option value="Viravada">
+                    Viravada
+                </option>
 
-                <option>Kumarapuram</option>
+                <option value="Kumarapuram">
+                    Kumarapuram
+                </option>
 
-                <option>Jalluru</option>
+                <option value="Jalluru">
+                    Jalluru
+                </option>
 
             </select>
 
 
             <label>Full Address</label>
 
-            <input
+            <textarea
                 id="address"
-                type="text"
+                rows="3"
                 placeholder="Enter your full address"
-            >
+            ></textarea>
 
         </div>
 
 
         <label>Payment Method</label>
 
-        <select id="payment" onchange="showUPI()">
+        <div class="radio-group">
 
-            <option value="Cash on Delivery">
+            <label>
+                <input
+                    type="radio"
+                    name="payment"
+                    value="Cash on Delivery"
+                    checked
+                    onchange="paymentChanged()"
+                >
                 💵 Cash on Delivery
-            </option>
+            </label>
 
-            <option value="UPI">
+            <label>
+                <input
+                    type="radio"
+                    name="payment"
+                    value="UPI"
+                    onchange="paymentChanged()"
+                >
                 📱 UPI
-            </option>
-
-        </select>
-
-
-        <div id="upiBox" class="upi-box">
-
-            <b>📱 UPI Payment Details</b>
-
-            <br>
-
-            UPI ID:
-            <b>Q669101380@ybl</b>
-
-            <br>
-
-            Name:
-            <b>Srinivasa Chicken shop</b>
-
-            <br>
-
-            UPI Number:
-            <b>9666709655</b>
-
-            <br>
-
-            Account Name:
-            <b>VEERLA SRINIVAS</b>
-
-            <br><br>
-
-            After payment, please send the payment screenshot
-            on WhatsApp.
+            </label>
 
         </div>
 
 
+        <div id="upiBox" class="upi-box hidden">
+
+            <h3>📱 UPI Payment</h3>
+
+            <p><b>UPI ID:</b> Q669101380@ybl</p>
+            <p><b>UPI Number:</b> 9666709655</p>
+            <p><b>Account Name:</b> VEERLA SRINIVAS</p>
+            <p><b>Name:</b> Srinivasa Chicken shop</p>
+
+            <br>
+
+            <p>
+                After payment, please send the payment screenshot
+                on WhatsApp.
+            </p>
+
+        </div>
+
+
+        <br>
+
+        <label>Order Note</label>
+
+        <textarea
+            id="note"
+            rows="3"
+            placeholder="Any special instructions?"
+        ></textarea>
+
+
         <button
-            class="place-order"
+            style="width:100%; margin-top:10px;"
             onclick="placeOrder()"
         >
-            📱 Place Order on WhatsApp
+            🛍️ PLACE ORDER
         </button>
+
+        <div id="message"></div>
 
     </div>
 
@@ -576,573 +569,385 @@ footer{
 
 
 <footer>
-
-    <h3>🐔 Srinivas Chicken</h3>
-
-    <p>FK Palem</p>
-
+    <p>🐔 Srinivas Chicken</p>
+    <p>📍 FK Palem</p>
     <p>📞 9666709655</p>
-
-    <p>Fresh Chicken • Quality Service</p>
-
 </footer>
 
 
 <script>
 
 let prices = {
-    chicken:260,
-    bontha:340,
-    pharam:250,
-    boneless:300,
-    legs:50,
-    wings:40
+    chicken: 260,
+    bontha: 340,
+    pharam: 250,
+    boneless: 300,
+    legs: 50,
+    wings: 40
 };
 
 let cart = [];
 
 
-/* LOAD DAILY PRICES */
+/* LOAD PRICES */
 
-async function loadPrices(){
+async function loadPrices() {
 
-    try{
+    try {
 
-        const response = await fetch("/api/prices");
-
-        if(!response.ok){
-            throw new Error("Price loading failed");
-        }
+        const response =
+            await fetch("/api/prices");
 
         prices = await response.json();
 
-    }catch(error){
+        document.getElementById("chickenPrice").innerText =
+            "₹" + prices.chicken + " / KG";
 
-        console.log("Using default prices");
+        document.getElementById("bonthaPrice").innerText =
+            "₹" + prices.bontha + " / KG";
+
+        document.getElementById("pharamPrice").innerText =
+            "₹" + prices.pharam + " / HEN";
+
+        document.getElementById("bonelessPrice").innerText =
+            "₹" + prices.boneless + " / KG";
+
+        document.getElementById("legsPrice").innerText =
+            "₹" + prices.legs + " / PORTION";
+
+        document.getElementById("wingsPrice").innerText =
+            "₹" + prices.wings + " / PORTION";
+
+    } catch (error) {
+
+        console.log(error);
 
     }
 
-    renderProducts();
+}
 
-    updateBill();
+loadPrices();
+
+
+/* ADD MONEY PRODUCT */
+
+function addMoneyProduct(name, amount, priceKey) {
+
+    const pricePerKg = prices[priceKey];
+
+    const quantityKg =
+        amount / pricePerKg;
+
+    cart.push({
+
+        name: name,
+
+        quantity: quantityKg,
+
+        displayQuantity:
+            "₹" + amount + " (" +
+            Math.round(quantityKg * 1000) +
+            "g)",
+
+        price: amount
+
+    });
+
+    renderCart();
 
 }
 
 
-/* PRODUCT CARD */
+/* ADD KG PRODUCT */
 
-function productCard(title, price, unit, options){
+function addKgProduct(name, kg, priceKey) {
 
-    return `
+    const price =
+        prices[priceKey] * kg;
 
-        <div class="product">
+    cart.push({
 
-            <h3>${title}</h3>
+        name: name,
 
-            <div class="price">
-                ₹${price} ${unit}
-            </div>
+        quantity: kg,
 
-            <div class="options">
+        displayQuantity:
+            kg === 0.5
+                ? "½ KG"
+                : kg + " KG",
 
-                ${options.map(option => `
+        price: price
 
-                    <button
-                        onclick='addItem(${JSON.stringify(option.name)}, ${option.price}, ${JSON.stringify(option.unit)})'
-                    >
-                        ${option.label}
-                    </button>
+    });
 
-                `).join("")}
-
-            </div>
-
-        </div>
-
-    `;
+    renderCart();
 
 }
 
 
-/* RENDER PRODUCTS */
+/* ADD FIXED PRODUCT */
 
-function renderProducts(){
+function addFixedProduct(name, priceKey) {
 
-    const chicken = prices.chicken;
-    const bontha = prices.bontha;
+    cart.push({
 
-    const chickenOptions = [
+        name: name,
 
-        {
-            name:"Chicken ₹50",
-            price:50,
-            unit:"~"+Math.round(50/chicken*1000)+"g",
-            label:"₹50 (~"+Math.round(50/chicken*1000)+"g)"
-        },
+        quantity: 1,
 
-        {
-            name:"Chicken ₹100",
-            price:100,
-            unit:"~"+Math.round(100/chicken*1000)+"g",
-            label:"₹100 (~"+Math.round(100/chicken*1000)+"g)"
-        },
+        displayQuantity: "1",
 
-        {
-            name:"Chicken ₹150",
-            price:150,
-            unit:"~"+Math.round(150/chicken*1000)+"g",
-            label:"₹150 (~"+Math.round(150/chicken*1000)+"g)"
-        },
+        price: prices[priceKey]
 
-        {
-            name:"Chicken ₹200",
-            price:200,
-            unit:"~"+Math.round(200/chicken*1000)+"g",
-            label:"₹200 (~"+Math.round(200/chicken*1000)+"g)"
-        },
+    });
 
-        {
-            name:"Chicken ₹250",
-            price:250,
-            unit:"~"+Math.round(250/chicken*1000)+"g",
-            label:"₹250 (~"+Math.round(250/chicken*1000)+"g)"
-        },
-
-        {
-            name:"½ KG Chicken",
-            price:chicken/2,
-            unit:"500g",
-            label:"½ KG - ₹"+(chicken/2)
-        },
-
-        {
-            name:"1 KG Chicken",
-            price:chicken,
-            unit:"1kg",
-            label:"1 KG - ₹"+chicken
-        }
-
-    ];
-
-
-    const bonthaOptions = [
-
-        {
-            name:"Bontha Kodi ₹100",
-            price:100,
-            unit:"~"+Math.round(100/bontha*1000)+"g",
-            label:"₹100 (~"+Math.round(100/bontha*1000)+"g)"
-        },
-
-        {
-            name:"Bontha Kodi ₹150",
-            price:150,
-            unit:"~"+Math.round(150/bontha*1000)+"g",
-            label:"₹150 (~"+Math.round(150/bontha*1000)+"g)"
-        },
-
-        {
-            name:"Bontha Kodi ₹200",
-            price:200,
-            unit:"~"+Math.round(200/bontha*1000)+"g",
-            label:"₹200 (~"+Math.round(200/bontha*1000)+"g)"
-        },
-
-        {
-            name:"Bontha Kodi ₹250",
-            price:250,
-            unit:"~"+Math.round(250/bontha*1000)+"g",
-            label:"₹250 (~"+Math.round(250/bontha*1000)+"g)"
-        },
-
-        {
-            name:"½ KG Bontha Chicken",
-            price:bontha/2,
-            unit:"500g",
-            label:"½ KG - ₹"+(bontha/2)
-        },
-
-        {
-            name:"1 KG Bontha Kodi",
-            price:bontha,
-            unit:"1kg",
-            label:"1 KG - ₹"+bontha
-        }
-
-    ];
-
-
-    const pharamOptions = [
-
-        {
-            name:"Pharam Kodi",
-            price:prices.pharam,
-            unit:"1 hen",
-            label:"₹"+prices.pharam+" / Hen"
-        }
-
-    ];
-
-
-    const bonelessOptions = [
-
-        {
-            name:"Boneless Chicken",
-            price:prices.boneless,
-            unit:"1kg",
-            label:"1 KG - ₹"+prices.boneless
-        }
-
-    ];
-
-
-    const legsOptions = [
-
-        {
-            name:"Chicken Legs",
-            price:prices.legs,
-            unit:"1 portion",
-            label:"₹"+prices.legs
-        }
-
-    ];
-
-
-    const wingsOptions = [
-
-        {
-            name:"Chicken Wings",
-            price:prices.wings,
-            unit:"1 portion",
-            label:"₹"+prices.wings
-        }
-
-    ];
-
-
-    document.getElementById("products").innerHTML =
-
-        productCard(
-            "🐔 Broiler Chicken",
-            chicken,
-            "/ kg",
-            chickenOptions
-        )
-
-        +
-
-        productCard(
-            "🍗 Bontha Kodi",
-            bontha,
-            "/ kg",
-            bonthaOptions
-        )
-
-        +
-
-        productCard(
-            "🐔 Pharam Kodi",
-            prices.pharam,
-            "/ hen",
-            pharamOptions
-        )
-
-        +
-
-        productCard(
-            "🍗 Boneless Chicken",
-            prices.boneless,
-            "/ kg",
-            bonelessOptions
-        )
-
-        +
-
-        productCard(
-            "🍗 Chicken Legs",
-            prices.legs,
-            "",
-            legsOptions
-        )
-
-        +
-
-        productCard(
-            "🍗 Chicken Wings",
-            prices.wings,
-            "",
-            wingsOptions
-        );
-
-}
-
-
-/* ADD ITEM */
-
-function addItem(name, price, unit){
-
-    const existing = cart.find(
-        item => item.name === name
-    );
-
-    if(existing){
-
-        existing.qty++;
-
-    }else{
-
-        cart.push({
-            name:name,
-            price:Number(price),
-            unit:unit,
-            qty:1
-        });
-
-    }
-
-    updateCart();
-
-}
-
-
-/* CHANGE QUANTITY */
-
-function changeQty(index, amount){
-
-    cart[index].qty += amount;
-
-    if(cart[index].qty <= 0){
-
-        cart.splice(index,1);
-
-    }
-
-    updateCart();
+    renderCart();
 
 }
 
 
 /* REMOVE ITEM */
 
-function removeItem(index){
+function removeItem(index) {
 
-    cart.splice(index,1);
+    cart.splice(index, 1);
 
-    updateCart();
+    renderCart();
 
 }
 
 
-/* UPDATE CART */
+/* INCREASE */
 
-function updateCart(){
+function increaseItem(index) {
+
+    const item = cart[index];
+
+    cart.push({
+
+        name: item.name,
+
+        quantity: item.quantity,
+
+        displayQuantity:
+            item.displayQuantity,
+
+        price: item.price
+
+    });
+
+    renderCart();
+
+}
+
+
+/* CART TOTAL */
+
+function getItemsTotal() {
+
+    return cart.reduce(
+        (total, item) =>
+            total + Number(item.price),
+        0
+    );
+
+}
+
+
+/* DELIVERY CALCULATION */
+
+function calculateDeliveryCharge() {
+
+    const orderType =
+        document.querySelector(
+            'input[name="orderType"]:checked'
+        )?.value;
+
+    const itemsTotal =
+        getItemsTotal();
+
+
+    /* PICKUP = FREE */
+
+    if (orderType === "pickup") {
+
+        return 0;
+
+    }
+
+
+    /* DELIVERY */
+
+    if (orderType === "delivery") {
+
+        /* BELOW ₹150 = ₹15 */
+
+        if (itemsTotal < 150) {
+
+            return 15;
+
+        }
+
+        /* ₹150 OR ABOVE = FREE */
+
+        return 0;
+
+    }
+
+
+    return 0;
+
+}
+
+
+/* RENDER CART */
+
+function renderCart() {
 
     const cartItems =
         document.getElementById("cartItems");
 
-    if(cart.length === 0){
+    if (cart.length === 0) {
 
         cartItems.innerHTML =
-            `<div class="empty">Your cart is empty</div>`;
+            "<p>Your cart is empty.</p>";
 
-    }else{
+    } else {
 
-        cartItems.innerHTML = cart.map(
-            (item,index) => `
+        cartItems.innerHTML = "";
 
-            <div class="cart-item">
+        cart.forEach((item, index) => {
+
+            const div =
+                document.createElement("div");
+
+            div.className =
+                "cart-item";
+
+            div.innerHTML = `
 
                 <div>
-
-                    <b>${item.name}</b>
-
-                    <br>
-
-                    ₹${item.price} × ${item.qty}
-
-                    ${item.unit ? " ("+item.unit+")" : ""}
-
+                    <b>${item.name}</b><br>
+                    ${item.displayQuantity}
+                    × ₹${item.price}
                 </div>
 
-                <div>
+                <div class="qty">
 
                     <button
-                        class="remove"
-                        onclick="changeQty(${index},-1)"
-                    >
-                        −
-                    </button>
-
-                    <b style="margin:0 8px">
-                        ${item.qty}
-                    </b>
-
-                    <button
-                        class="remove"
-                        onclick="changeQty(${index},1)"
+                        onclick="increaseItem(${index})"
                     >
                         +
                     </button>
 
                     <button
-                        class="remove"
                         onclick="removeItem(${index})"
-                        style="margin-left:5px"
                     >
                         Remove
                     </button>
 
                 </div>
 
-            </div>
+            `;
 
-        `
-        ).join("");
+            cartItems.appendChild(div);
 
-    }
-
-
-    let count = 0;
-
-    cart.forEach(item => {
-        count += item.qty;
-    });
-
-    document.getElementById("cartCount").textContent =
-        count;
-
-    updateBill();
-
-}
-
-
-/* GET ORDER TYPE */
-
-function getOrderType(){
-
-    const selected =
-        document.querySelector(
-            'input[name="orderType"]:checked'
-        );
-
-    return selected ? selected.value : "delivery";
-
-}
-
-
-/* UPDATE BILL */
-
-function updateBill(){
-
-    let itemsTotal = 0;
-
-    cart.forEach(item => {
-
-        itemsTotal +=
-            item.price * item.qty;
-
-    });
-
-
-    const orderType = getOrderType();
-
-    let deliveryCharge = 0;
-
-    const sunday =
-        new Date().getDay() === 0;
-
-
-    if(orderType === "delivery"){
-
-        if(sunday){
-
-            if(itemsTotal > 0 && itemsTotal < 150){
-
-                deliveryCharge = 15;
-
-            }
-
-        }else{
-
-            deliveryCharge = 0;
-
-        }
+        });
 
     }
 
 
-    document.getElementById("itemsTotal").textContent =
+    const itemsTotal =
+        getItemsTotal();
+
+    const deliveryCharge =
+        calculateDeliveryCharge();
+
+    const grandTotal =
+        itemsTotal + deliveryCharge;
+
+
+    document.getElementById(
+        "itemsTotal"
+    ).innerText =
         Math.round(itemsTotal);
 
 
-    document.getElementById("deliveryCharge").textContent =
-        deliveryCharge;
+    document.getElementById(
+        "deliveryCharge"
+    ).innerText =
+        Math.round(deliveryCharge);
 
 
-    document.getElementById("finalTotal").textContent =
-        Math.round(itemsTotal + deliveryCharge);
-
-
-    const status =
-        document.getElementById("deliveryStatus");
-
-
-    if(orderType === "pickup"){
-
-        status.innerHTML =
-            "🏪 Shop Pickup selected — Pickup is available every day. Delivery charge: ₹0.";
-
-    }else{
-
-        if(sunday){
-
-            status.innerHTML =
-                "🚚 Sunday delivery is available in the listed areas. ₹15 below ₹150, FREE at ₹150+.";
-
-        }else{
-
-            status.innerHTML =
-                "⚠️ Delivery is available only on Sunday. Please select Shop Pickup today.";
-
-        }
-
-    }
-
-
-    const deliveryFields =
-        document.getElementById("deliveryFields");
-
-
-    if(orderType === "delivery"){
-
-        deliveryFields.style.display = "block";
-
-    }else{
-
-        deliveryFields.style.display = "none";
-
-    }
+    document.getElementById(
+        "grandTotal"
+    ).innerText =
+        Math.round(grandTotal);
 
 }
 
 
-/* UPI */
+/* UPDATE DELIVERY */
 
-function showUPI(){
+function updateDelivery() {
+
+    const orderType =
+        document.querySelector(
+            'input[name="orderType"]:checked'
+        )?.value;
+
+    const deliveryFields =
+        document.getElementById(
+            "deliveryFields"
+        );
+
+
+    if (orderType === "delivery") {
+
+        deliveryFields.classList.remove(
+            "hidden"
+        );
+
+    } else {
+
+        deliveryFields.classList.add(
+            "hidden"
+        );
+
+    }
+
+
+    renderCart();
+
+}
+
+
+/* PAYMENT */
+
+function paymentChanged() {
 
     const payment =
-        document.getElementById("payment").value;
+        document.querySelector(
+            'input[name="payment"]:checked'
+        )?.value;
 
-    const box =
-        document.getElementById("upiBox");
+    const upiBox =
+        document.getElementById(
+            "upiBox"
+        );
 
-    if(payment === "UPI"){
 
-        box.style.display = "block";
+    if (payment === "UPI") {
 
-    }else{
+        upiBox.classList.remove(
+            "hidden"
+        );
 
-        box.style.display = "none";
+    } else {
+
+        upiBox.classList.add(
+            "hidden"
+        );
 
     }
 
@@ -1151,11 +956,20 @@ function showUPI(){
 
 /* PLACE ORDER */
 
-async function placeOrder(){
+async function placeOrder() {
 
-    if(cart.length === 0){
+    const message =
+        document.getElementById(
+            "message"
+        );
 
-        alert("Please add items to your cart.");
+    message.innerHTML = "";
+
+
+    if (cart.length === 0) {
+
+        message.innerHTML =
+            '<div class="error">Please add items to cart.</div>';
 
         return;
 
@@ -1163,75 +977,94 @@ async function placeOrder(){
 
 
     const name =
-        document.getElementById("name").value.trim();
+        document.getElementById(
+            "customerName"
+        ).value.trim();
+
 
     const phone =
-        document.getElementById("phone").value.trim();
-
-
-    if(!name){
-
-        alert("Please enter your name.");
-
-        return;
-
-    }
-
-
-    if(!/^[0-9]{10}$/.test(phone)){
-
-        alert("Please enter a valid 10 digit phone number.");
-
-        return;
-
-    }
+        document.getElementById(
+            "customerPhone"
+        ).value.trim();
 
 
     const orderType =
-        getOrderType();
+        document.querySelector(
+            'input[name="orderType"]:checked'
+        ).value;
 
 
-    const sunday =
-        new Date().getDay() === 0;
+    const payment =
+        document.querySelector(
+            'input[name="payment"]:checked'
+        ).value;
 
 
-    if(orderType === "delivery" && !sunday){
+    if (!name) {
 
-        alert(
-            "Delivery is available only on Sunday. Please select Shop Pickup."
-        );
+        message.innerHTML =
+            '<div class="error">Please enter your name.</div>';
 
         return;
 
     }
 
 
-    let area = "";
+    if (!/^[0-9]{10}$/.test(phone)) {
 
-    let address = "";
+        message.innerHTML =
+            '<div class="error">Please enter a valid 10-digit phone number.</div>';
 
+        return;
 
-    if(orderType === "delivery"){
-
-        area =
-            document.getElementById("area").value;
-
-        address =
-            document.getElementById("address").value.trim();
+    }
 
 
-        if(!area){
+    /* DELIVERY CHECK */
 
-            alert("Please select your delivery area.");
+    if (orderType === "delivery") {
+
+        const today =
+            new Date().getDay();
+
+        /* Sunday = 0 */
+
+        if (today !== 0) {
+
+            message.innerHTML =
+                '<div class="error">Home delivery is available only on Sunday. Please select Pickup.</div>';
 
             return;
 
         }
 
 
-        if(!address){
+        const area =
+            document.getElementById(
+                "area"
+            ).value;
 
-            alert("Please enter your full address.");
+
+        if (!area) {
+
+            message.innerHTML =
+                '<div class="error">Please select your delivery area.</div>';
+
+            return;
+
+        }
+
+
+        const address =
+            document.getElementById(
+                "address"
+            ).value.trim();
+
+
+        if (!address) {
+
+            message.innerHTML =
+                '<div class="error">Please enter your full address.</div>';
 
             return;
 
@@ -1240,219 +1073,78 @@ async function placeOrder(){
     }
 
 
-    const payment =
-        document.getElementById("payment").value;
+    const itemsTotal =
+        getItemsTotal();
 
 
-    let itemsTotal = 0;
-
-    cart.forEach(item => {
-
-        itemsTotal +=
-            item.price * item.qty;
-
-    });
-
+    /* IMPORTANT DELIVERY CHARGE */
 
     let deliveryCharge = 0;
 
 
-    if(orderType === "delivery" && sunday){
+    if (orderType === "delivery") {
 
-        if(itemsTotal < 150){
+        if (itemsTotal < 150) {
 
             deliveryCharge = 15;
 
+        } else {
+
+            deliveryCharge = 0;
+
         }
+
+    } else {
+
+        deliveryCharge = 0;
 
     }
 
 
-    const finalTotal =
+    const grandTotal =
         itemsTotal + deliveryCharge;
+
+
+    const note =
+        document.getElementById(
+            "note"
+        ).value.trim();
+
+
+    const area =
+        orderType === "delivery"
+            ? document.getElementById("area").value
+            : "Pickup";
+
+
+    const address =
+        orderType === "delivery"
+            ? document.getElementById("address").value.trim()
+            : "Shop Pickup";
 
 
     const order = {
 
-        customerName:name,
+        customerName: name,
 
-        phone:phone,
+        customerPhone: phone,
 
-        orderType:orderType,
+        orderType: orderType,
 
-        area:area,
+        area: area,
 
-        address:address,
+        address: address,
 
-        payment:payment,
+        payment: payment,
 
-        items:cart,
+        note: note,
 
-        itemsTotal:Math.round(itemsTotal),
+        items: cart,
 
-        deliveryCharge:deliveryCharge,
+        itemsTotal: Math.round(itemsTotal),
 
-        finalTotal:Math.round(finalTotal)
+        deliveryCharge:
+            Math.round(deliveryCharge),
 
-    };
-
-
-    try{
-
-        const response =
-            await fetch("/api/orders",{
-
-                method:"POST",
-
-                headers:{
-                    "Content-Type":"application/json"
-                },
-
-                body:JSON.stringify(order)
-
-            });
-
-
-        const result =
-            await response.json();
-
-
-        if(!response.ok){
-
-            throw new Error(
-                result.message || "Order failed"
-            );
-
-        }
-
-
-        let message =
-            "🐔 *SRINIVAS CHICKEN ORDER*%0A%0A";
-
-
-        message +=
-            "👤 Name: " +
-            encodeURIComponent(name) +
-            "%0A";
-
-
-        message +=
-            "📞 Phone: " +
-            encodeURIComponent(phone) +
-            "%0A";
-
-
-        message +=
-            "🏪 Order Type: " +
-            encodeURIComponent(orderType) +
-            "%0A";
-
-
-        if(orderType === "delivery"){
-
-            message +=
-                "📍 Area: " +
-                encodeURIComponent(area) +
-                "%0A";
-
-            message +=
-                "🏠 Address: " +
-                encodeURIComponent(address) +
-                "%0A";
-
-        }
-
-
-        message += "%0A🍗 *ITEMS*%0A";
-
-
-        cart.forEach(item => {
-
-            const lineTotal =
-                item.price * item.qty;
-
-            message +=
-                encodeURIComponent(
-                    item.name +
-                    " × " +
-                    item.qty +
-                    " = ₹" +
-                    lineTotal
-                ) +
-                "%0A";
-
-        });
-
-
-        message +=
-            "%0A🧾 Items Total: ₹" +
-            Math.round(itemsTotal);
-
-
-        message +=
-            "%0A🚚 Delivery Charge: ₹" +
-            deliveryCharge;
-
-
-        message +=
-            "%0A💰 *FINAL TOTAL: ₹" +
-            Math.round(finalTotal) +
-            "*";
-
-
-        message +=
-            "%0A💳 Payment: " +
-            encodeURIComponent(payment);
-
-
-        if(payment === "UPI"){
-
-            message +=
-                "%0A📱 UPI ID: Q669101380@ybl";
-
-            message +=
-                "%0APlease send payment screenshot on WhatsApp.";
-
-        }
-
-
-        message +=
-            "%0A%0AThank you! 🐔";
-
-
-        const whatsappNumber =
-            "919666709655";
-
-
-        const whatsappURL =
-            "https://wa.me/" +
-            whatsappNumber +
-            "?text=" +
-            message;
-
-
-        window.location.href =
-            whatsappURL;
-
-
-    }catch(error){
-
-        console.error(error);
-
-        alert(
-            "Could not place the order. Please try again."
-        );
-
-    }
-
-}
-
-
-/* START */
-
-loadPrices();
-
-</script>
-
-</body>
-</html>
+        grandTotal:
+            Math.round(grandTotal)
