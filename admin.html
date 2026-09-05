@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Srinivas Chicken - Price Update
+</title>
+
+<style>
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background: #f7f7f7;
+
+    margin: 0;
+
+    color: #222;
+}
+
+header {
+
+    background: #d71919;
+
+    color: white;
+
+    padding: 18px;
+
+    text-align: center;
+}
+
+.container {
+
+    max-width: 600px;
+
+    margin: 20px auto;
+
+    padding: 15px;
+}
+
+.box {
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 2px 8px rgba(0,0,0,0.1);
+}
+
+label {
+
+    display: block;
+
+    font-weight: bold;
+
+    margin-top: 12px;
+}
+
+input {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 12px;
+
+    margin-top: 6px;
+
+    border:
+        1px solid #ccc;
+
+    border-radius: 7px;
+
+    font-size: 16px;
+}
+
+button {
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #d71919;
+
+    color: white;
+
+    font-size: 17px;
+
+    cursor: pointer;
+}
+
+button:hover {
+
+    background: #b91414;
+}
+
+.note {
+
+    background: #fff5f5;
+
+    padding: 12px;
+
+    margin-bottom: 15px;
+
+    border-left:
+        4px solid #d71919;
+}
+
+#msg {
+
+    margin-top: 15px;
+
+    padding: 12px;
+
+    border-radius: 7px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🐔 Srinivas Chicken</h1>
+
+<p>Owner Price Update</p>
+
+</header>
+
+
+<div class="container">
+
+<div class="box">
+
+<div class="note">
+
+Change today's prices here.
+Customers will automatically see
+the updated prices.
+
+</div>
+
+
+<label>
+Owner Password
+</label>
+
+<input
+id="password"
+type="password"
+placeholder="Enter owner password"
+>
+
+
+<label>
+Chicken ₹ / kg
+</label>
+
+<input
+id="chicken"
+type="number"
+min="0"
+>
+
+
+<label>
+Bontha Kodi ₹ / kg
+</label>
+
+<input
+id="bontha"
+type="number"
+min="0"
+>
+
+
+<label>
+Pharam Kodi ₹ / hen
+</label>
+
+<input
+id="pharam"
+type="number"
+min="0"
+>
+
+
+<label>
+Boneless Chicken ₹ / kg
+</label>
+
+<input
+id="boneless"
+type="number"
+min="0"
+>
+
+
+<label>
+Chicken Legs ₹
+</label>
+
+<input
+id="legs"
+type="number"
+min="0"
+>
+
+
+<label>
+Chicken Wings ₹
+</label>
+
+<input
+id="wings"
+type="number"
+min="0"
+>
+
+
+<button onclick="savePrices()">
+
+💾 Save Today's Prices
+
+</button>
+
+
+<div
+id="msg"
+style="display:none"
+>
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+async function loadPrices() {
+
+    const response =
+        await fetch("/api/prices");
+
+    const prices =
+        await response.json();
+
+    const keys = [
+
+        "chicken",
+        "bontha",
+        "pharam",
+        "boneless",
+        "legs",
+        "wings"
+
+    ];
+
+    keys.forEach(key => {
+
+        document.getElementById(
+            key
+        ).value = prices[key];
+
+    });
+}
+
+
+async function savePrices() {
+
+    const data = {};
+
+    const keys = [
+
+        "chicken",
+        "bontha",
+        "pharam",
+        "boneless",
+        "legs",
+        "wings"
+
+    ];
+
+    keys.forEach(key => {
+
+        data[key] =
+            Number(
+                document.getElementById(
+                    key
+                ).value
+            );
+
+    });
+
+
+    const password =
+        document.getElementById(
+            "password"
+        ).value;
+
+
+    const response =
+        await fetch(
+            "/api/prices",
+            {
+
+                method: "POST",
+
+                headers: {
+
+                    "Content-Type":
+                        "application/json",
+
+                    "x-owner-password":
+                        password
+                },
+
+                body:
+                    JSON.stringify(data)
+            }
+        );
+
+
+    const result =
+        await response.json();
+
+
+    const message =
+        document.getElementById(
+            "msg"
+        );
+
+    message.style.display =
+        "block";
+
+
+    if (response.ok) {
+
+        message.style.background =
+            "#e8f5e9";
+
+        message.style.color =
+            "green";
+
+        message.innerText =
+            "✅ Prices updated successfully!";
+
+    } else {
+
+        message.style.background =
+            "#ffebee";
+
+        message.style.color =
+            "red";
+
+        message.innerText =
+            "❌ " + result.message;
+    }
+}
+
+
+loadPrices();
+
+</script>
+
+</body>
+
+</html>
