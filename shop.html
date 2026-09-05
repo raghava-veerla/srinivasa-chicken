@@ -4,273 +4,304 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Srinivas Chicken - Fresh Chicken</title>
+<title>Srinivas Chicken - FK Palem</title>
 
 <style>
-* {
-    box-sizing: border-box;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f7f7f7;
-    color: #222;
+body{
+    background:#fff5f5;
+    color:#222;
 }
 
-header {
-    background: #d71919;
-    color: white;
-    padding: 15px;
-    text-align: center;
+header{
+    background:#d71920;
+    color:white;
+    padding:15px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 28px;
+header h1{
+    font-size:25px;
 }
 
-header p {
-    margin: 5px 0;
+header p{
+    margin-top:5px;
+    font-size:14px;
 }
 
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 15px;
+.cart-top{
+    margin-top:10px;
+    font-size:17px;
+    font-weight:bold;
 }
 
-.hero {
-    background: #fff;
-    border-radius: 12px;
-    padding: 25px;
-    text-align: center;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+.hero{
+    text-align:center;
+    padding:30px 15px;
+    background:#ffe5e5;
 }
 
-.hero h2 {
-    color: #d71919;
-    font-size: 30px;
-    margin: 5px;
+.hero h2{
+    font-size:30px;
+    color:#d71920;
+    margin-bottom:10px;
 }
 
-.hero p {
-    font-size: 17px;
+.hero p{
+    font-size:16px;
 }
 
-.section {
-    background: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+.info{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:20px;
 }
 
-.section h2 {
-    margin-top: 0;
-    color: #d71919;
+.info span{
+    background:white;
+    padding:8px 12px;
+    border-radius:20px;
+    box-shadow:0 2px 5px #ddd;
 }
 
-.products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px 15px;
 }
 
-.product {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 15px;
-    text-align: center;
-    background: #fff;
+h2.section-title{
+    margin:20px 0 15px;
+    color:#d71920;
 }
 
-.product h3 {
-    margin: 5px 0;
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
 }
 
-.price {
-    color: #d71919;
-    font-size: 20px;
-    font-weight: bold;
-    margin: 10px 0;
+.product{
+    background:white;
+    border-radius:12px;
+    padding:15px;
+    box-shadow:0 2px 8px #ddd;
 }
 
-.product button,
-.place-order {
-    background: #d71919;
-    color: white;
-    border: none;
-    padding: 10px 18px;
-    border-radius: 7px;
-    cursor: pointer;
-    font-size: 16px;
+.product h3{
+    margin-bottom:7px;
 }
 
-.product button:hover,
-.place-order:hover {
-    background: #b91414;
+.price{
+    color:#d71920;
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:12px;
 }
 
-.quantity {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    margin-top: 10px;
+.options{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
 }
 
-.quantity button {
-    width: 35px;
-    height: 35px;
-    padding: 0;
-    font-size: 20px;
+.options button{
+    border:1px solid #d71920;
+    background:white;
+    color:#d71920;
+    padding:8px 10px;
+    border-radius:7px;
+    cursor:pointer;
 }
 
-.quantity span {
-    font-size: 18px;
-    font-weight: bold;
+.options button:hover{
+    background:#d71920;
+    color:white;
 }
 
-.cart-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #ddd;
-    padding: 12px 0;
-    gap: 10px;
+.qty{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    margin-top:12px;
 }
 
-.cart-item button {
-    background: #d71919;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
+.qty button{
+    width:35px;
+    height:35px;
+    border:none;
+    border-radius:50%;
+    background:#d71920;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
 }
 
-.delivery-note {
-    margin-top: 15px;
-    padding: 15px;
-    background: #fff5f5;
-    border-left: 5px solid #d71919;
-    border-radius: 8px;
-    line-height: 1.7;
+.cart-box{
+    background:white;
+    padding:18px;
+    border-radius:12px;
+    box-shadow:0 2px 8px #ddd;
+    margin-top:25px;
 }
 
-.bill {
-    margin-top: 15px;
-    padding-top: 15px;
-    border-top: 2px solid #ddd;
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #ddd;
+    padding:10px 0;
+    gap:10px;
 }
 
-.bill-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 7px 0;
-    font-size: 17px;
+.cart-item:last-child{
+    border-bottom:none;
 }
 
-.delivery-free {
-    color: green;
-    font-weight: bold;
+.remove{
+    background:#333;
+    color:white;
+    border:none;
+    padding:5px 8px;
+    border-radius:5px;
 }
 
-.final-total {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    padding-top: 12px;
-    border-top: 2px solid #222;
-    font-size: 25px;
-    font-weight: bold;
-    color: #d71919;
+.delivery-note{
+    background:#fff4d6;
+    border-left:5px solid #f0a000;
+    padding:15px;
+    margin-top:20px;
+    border-radius:8px;
+    line-height:1.5;
 }
 
-label {
-    font-weight: bold;
-    display: block;
-    margin-top: 12px;
+.delivery-status{
+    margin-top:12px;
+    padding:10px;
+    border-radius:7px;
+    background:#f1f1f1;
+    font-weight:bold;
 }
 
-input,
-select,
-textarea {
-    width: 100%;
-    padding: 11px;
-    margin-top: 6px;
-    border: 1px solid #ccc;
-    border-radius: 7px;
-    font-size: 16px;
+.bill{
+    margin-top:20px;
+    background:#fafafa;
+    padding:15px;
+    border-radius:8px;
 }
 
-textarea {
-    min-height: 80px;
-    resize: vertical;
+.bill-row{
+    display:flex;
+    justify-content:space-between;
+    padding:6px 0;
 }
 
-.radio-group {
-    display: flex;
-    gap: 20px;
-    margin-top: 10px;
+.final{
+    border-top:2px solid #ddd;
+    margin-top:8px;
+    padding-top:10px;
+    font-size:20px;
+    font-weight:bold;
+    color:#d71920;
 }
 
-.radio-group label {
-    font-weight: normal;
-    margin: 0;
+.form-box{
+    background:white;
+    margin-top:25px;
+    padding:18px;
+    border-radius:12px;
+    box-shadow:0 2px 8px #ddd;
 }
 
-.radio-group input {
-    width: auto;
+.form-box label{
+    display:block;
+    margin-top:12px;
+    margin-bottom:5px;
+    font-weight:bold;
 }
 
-.payment-box {
-    margin-top: 15px;
-    padding: 15px;
-    background: #fff8e1;
-    border-radius: 8px;
-    border-left: 5px solid #ff9800;
+.form-box input,
+.form-box select{
+    width:100%;
+    padding:11px;
+    border:1px solid #ccc;
+    border-radius:7px;
+    font-size:16px;
 }
 
-.place-order {
-    width: 100%;
-    margin-top: 20px;
-    padding: 14px;
-    font-size: 18px;
+.radio-box{
+    display:flex;
+    gap:20px;
+    margin-top:10px;
+    flex-wrap:wrap;
 }
 
-.empty {
-    text-align: center;
-    color: #777;
-    padding: 15px;
+.radio-box label{
+    margin:0;
+    font-weight:normal;
 }
 
-footer {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
+.place-order{
+    width:100%;
+    margin-top:20px;
+    padding:14px;
+    background:#25d366;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-@media(max-width:600px) {
-    header h1 {
-        font-size: 23px;
+.place-order:hover{
+    background:#1ebe5d;
+}
+
+.upi-box{
+    display:none;
+    background:#eefbf2;
+    border:1px solid #8bd5a5;
+    padding:12px;
+    margin-top:10px;
+    border-radius:8px;
+    line-height:1.6;
+}
+
+.empty{
+    text-align:center;
+    padding:20px;
+    color:#777;
+}
+
+footer{
+    margin-top:30px;
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:500px){
+    .hero h2{
+        font-size:25px;
     }
 
-    .hero h2 {
-        font-size: 25px;
-    }
-
-    .products {
-        grid-template-columns: 1fr;
-    }
-
-    .cart-item {
-        flex-direction: column;
-        align-items: flex-start;
+    .cart-item{
+        flex-direction:column;
+        align-items:flex-start;
     }
 }
 </style>
@@ -279,181 +310,62 @@ footer {
 <body>
 
 <header>
+
     <h1>🐔 Srinivas Chicken</h1>
+
     <p>📍 FK Palem</p>
+
     <p>📞 9666709655</p>
+
+    <div class="cart-top">
+        🛒 Cart: <span id="cartCount">0</span>
+    </div>
+
 </header>
+
+
+<section class="hero">
+
+    <h2>Fresh Chicken Everyday!</h2>
+
+    <p>Fresh • Clean • Quality Chicken</p>
+
+    <div class="info">
+        <span>🍗 Fresh Chicken</span>
+        <span>🚚 Sunday Delivery</span>
+        <span>🏪 Pickup Available</span>
+    </div>
+
+</section>
+
 
 <div class="container">
 
-    <div class="hero">
-        <h2>Fresh Chicken Everyday! 🍗</h2>
-        <p>Fresh • Clean • Quality Chicken</p>
-        <p>🚚 Home Delivery Available</p>
-    </div>
+    <h2 class="section-title">🍗 Chicken</h2>
 
+    <div id="products" class="products"></div>
 
-    <!-- MONEY OPTIONS -->
-    <div class="section">
-
-        <h2>💰 BROILER </h2>
-
-      <div class="products">
-
-            <div class="product">
-                <h3>Chicken ₹50</h3>
-                <p>≈ 192g</p>
-                <div class="price">₹50</div>
-                <button onclick="addMoneyChicken(50, 192)">Add</button>
-            </div>
-
-            <div class="product">
-                <h3>Chicken ₹100</h3>
-                <p>≈ 385g</p>
-                <div class="price">₹100</div>
-                <button onclick="addMoneyChicken(100, 385)">Add</button>
-            </div>
-
-            <div class="product">
-                <h3>Chicken ₹150</h3>
-                <p>≈ 577g</p>
-                <div class="price">₹150</div>
-                <button onclick="addMoneyChicken(150, 577)">Add</button>
-            </div>
-
-            <div class="product">
-                <h3>Chicken ₹200</h3>
-                <p>≈ 769g</p>
-                <div class="price">₹200</div>
-                <button onclick="addMoneyChicken(200, 769)">Add</button>
-            </div>
-
-            <div class="product">
-                <h3>Chicken ₹250</h3>
-                <p>≈ 962g</p>
-                <div class="price">₹250</div>
-                <button onclick="addMoneyChicken(250, 962)">Add</button>
-            </div>
-
-            <div class="product">
-                <h3>½ KG Chicken</h3>
-                <p>500g</p>
-                <div class="price">₹130</div>
-                <button onclick="addProduct('Chicken ½ KG', 130, '500g')">Add</button>
-            </div>
-
-            <div class="product">
-                <h3>1 KG Chicken</h3>
-                <p>1000g</p>
-                <div class="price">₹260</div>
-                <button onclick="addProduct('Chicken 1 KG', 260, '1kg')">Add</button>
-            </div>
-              <div class="product">
-                <h3>🍗 Boneless Chicken</h3>
-                <p>Fresh Boneless</p>
-                <div class="price">₹300 / kg</div>
-                <button onclick="addProduct('Boneless Chicken', 300, '1kg')">
-                    Add
-                </button>
-            </div>
-
-            <div class="product">
-                <h3>🍗 Chicken Legs</h3>
-                <p>Fresh Chicken Legs</p>
-                <div class="price">₹50</div>
-                <button onclick="addProduct('Chicken Legs', 50, '1')">
-                    Add
-                </button>
-            </div>
-
-            <div class="product">
-                <h3>🍗 Chicken Wings</h3>
-                <p>Fresh Chicken Wings</p>
-                <div class="price">₹40</div>
-                <button onclick="addProduct('Chicken Wings', 40, '1')">
-                    Add
-                </button>
-            </div>
-
-
-        </div>
-    </div>
-
-    <!-- CHICKEN VARIETIES -->
-    <div class="section">
-
-        <h2>🐔 BONTHA,PHARAM</h2>
-
-        <div class="products">
-
-          
-
-            <div class="product">
-                <h3>🐔 Bontha chicken</h3>
-                <p>Fresh Bontha Kodi</p>
-                <div class="price">₹340 / kg</div>
-                <button onclick="addProduct('Bontha Kodi', 340, '1kg')">Add</button>
-            </div>
-            <div class="product">
-                <h3> Bontha Chicken ₹100</h3>
-                <p>≈ 333g</p>
-                <div class="price">₹100</div>
-                <button onclick="addMoneyChicken(100, 333)">Add</button>
-            </div>
-
-            <div class="product">
-                <h3>Bontha chicken ₹150</h3>
-                <p>≈ 500g</p>
-                <div class="price">₹150</div>
-                <button onclick="addMoneyChicken(150, 500)">Add</button>
-            </div>
-
-            <div class="product">
-                <h3>Bontha chicken ₹200</h3>
-                <p>≈ 666g</p>
-                <div class="price">₹200</div>
-                <button onclick="addMoneyChicken(200, 666)">Add</button>
-            </div>
-
-            <div class="product">
-                <h3>Bontha chicken ₹250</h3>
-                <p>≈ 833g</p>
-                <div class="price">₹250</div>
-                <button onclick="addMoneyChicken(250, 833)">Add</button>
-            </div>
-
-            <div class="product">
-                <h3>½ KG  Bontha Chicken</h3>
-                <p>500g</p>
-                <div class="price">₹150</div>
-                <button onclick="addProduct('Chicken ½ KG', 150, '500g')">Add</button>
-            </div>
-
-            <div class="product">
-                <h3>🐔 Pharam Kodi</h3>
-                <p>1 Hen</p>
-                <div class="price">₹250 / hen</div>
-                <button onclick="addProduct('Pharam Kodi', 250, '1 hen')">
-                    Add 1 Hen
-                </button>
-            </div>
-
-          
-        </div>
-    </div>
 
     <!-- CART -->
-    <div class="section">
+
+    <div class="cart-box">
 
         <h2>🛒 Your Cart</h2>
 
-        <div id="cartItems">
-            <div class="empty">Your cart is empty</div>
+        <div id="cartItems" class="empty">
+            Your cart is empty
         </div>
+
+
+        <!-- DELIVERY INFORMATION -->
 
         <div class="delivery-note">
 
             <b>🚚 Delivery Information</b>
+
+            <br><br>
+
+            📅 <b>Delivery Available Only On Sunday</b>
 
             <br><br>
 
@@ -465,519 +377,1080 @@ footer {
             <br><br>
 
             💰 <b>Delivery Charge:</b><br>
+
             ₹15 for orders below ₹150.
 
             <br>
 
             🆓 <b>FREE Delivery:</b><br>
+
             Orders ₹150 and above.
 
-            <br>
+            <br><br>
 
             🏪 <b>Shop Pickup:</b><br>
-            No delivery charge.
+
+            Available every day with no delivery charge.
 
         </div>
 
+
+        <div id="deliveryStatus" class="delivery-status"></div>
+
+
+        <!-- BILL -->
+
         <div class="bill">
+
+            <h3>🧾 Bill Summary</h3>
 
             <div class="bill-row">
                 <span>Items Total</span>
-                <span id="itemsTotal">₹0</span>
+                <span>₹<span id="itemsTotal">0</span></span>
             </div>
 
             <div class="bill-row">
                 <span>Delivery Charge</span>
-                <span id="deliveryCharge">₹0</span>
+                <span>₹<span id="deliveryCharge">0</span></span>
             </div>
 
-            <div class="final-total">
-                <span>Final Total</span>
-                <span id="finalTotal">₹0</span>
+            <div class="final">
+                <div class="bill-row">
+                    <span>Final Total</span>
+                    <span>₹<span id="finalTotal">0</span></span>
+                </div>
             </div>
 
         </div>
 
     </div>
 
+
     <!-- CUSTOMER DETAILS -->
-    <div class="section">
+
+    <div class="form-box">
 
         <h2>👤 Customer Details</h2>
 
+
         <label>Full Name</label>
-        <input id="name" type="text" placeholder="Enter your name">
+
+        <input
+            id="name"
+            type="text"
+            placeholder="Enter your name"
+        >
+
 
         <label>Phone Number</label>
-        <input id="phone" type="tel" placeholder="Enter phone number">
+
+        <input
+            id="phone"
+            type="tel"
+            placeholder="Enter phone number"
+            maxlength="10"
+        >
+
 
         <label>Order Type</label>
 
-        <div class="radio-group">
+        <div class="radio-box">
 
             <label>
-                <input type="radio" name="orderType"
-                       value="Delivery"
-                       checked
-                       onchange="updateDeliveryUI()">
+                <input
+                    type="radio"
+                    name="orderType"
+                    value="delivery"
+                    checked
+                    onchange="updateBill()"
+                >
                 🚚 Delivery
             </label>
 
             <label>
-                <input type="radio" name="orderType"
-                       value="Pickup"
-                       onchange="updateDeliveryUI()">
-                🏪 Pickup
+                <input
+                    type="radio"
+                    name="orderType"
+                    value="pickup"
+                    onchange="updateBill()"
+                >
+                🏪 Shop Pickup
             </label>
 
         </div>
 
-        <div id="deliveryAreaBox">
+
+        <div id="deliveryFields">
 
             <label>Delivery Area</label>
 
-            <select id="deliveryArea">
+            <select id="area">
 
-                <option value="">Select your area</option>
-                <option value="Chandrampalem">Chandrampalem</option>
-                <option value="Kandarada">Kandarada</option>
-                <option value="Fakruddinpalem">Fakruddinpalem</option>
-                <option value="Viravada">Viravada</option>
-                <option value="Kumarapuram">Kumarapuram</option>
-                <option value="Jalluru">Jalluru</option>
+                <option value="">
+                    Select Delivery Area
+                </option>
+
+                <option>Chandrampalem</option>
+
+                <option>Kandarada</option>
+
+                <option>Fakruddinpalem</option>
+
+                <option>Viravada</option>
+
+                <option>Kumarapuram</option>
+
+                <option>Jalluru</option>
 
             </select>
 
-            <label>Delivery Address</label>
 
-            <textarea id="address"
-                placeholder="Enter your full address"></textarea>
+            <label>Full Address</label>
+
+            <input
+                id="address"
+                type="text"
+                placeholder="Enter your full address"
+            >
 
         </div>
 
+
         <label>Payment Method</label>
 
-        <select id="paymentMethod" onchange="showPaymentInfo()">
+        <select id="payment" onchange="showUPI()">
 
             <option value="Cash on Delivery">
                 💵 Cash on Delivery
             </option>
 
             <option value="UPI">
-                📱 UPI Payment
+                📱 UPI
             </option>
 
         </select>
 
-        <div id="paymentInfo" class="payment-box" style="display:none;">
 
-            <b>📱 UPI Payment</b>
+        <div id="upiBox" class="upi-box">
 
-            <p>After payment, send the payment screenshot on WhatsApp.</p>
+            <b>📱 UPI Payment Details</b>
 
-            <p><b>UPI ID:</b>Q669101380@ybl</p>
-            <p><b>Name for UPI ID:</b>Srinivasa Chicken shop</p>
+            <br>
 
-            <p><b>UPI Number:</b>9666709655</p>
-            <p><b>Name for UPI Number:</b>VEERLA SRINIVAS</p>
+            UPI ID:
+            <b>Q669101380@ybl</b>
 
-            
+            <br>
+
+            Name:
+            <b>Srinivasa Chicken shop</b>
+
+            <br>
+
+            UPI Number:
+            <b>9666709655</b>
+
+            <br>
+
+            Account Name:
+            <b>VEERLA SRINIVAS</b>
+
+            <br><br>
+
+            After payment, please send the payment screenshot
+            on WhatsApp.
 
         </div>
 
-        <button class="place-order" onclick="placeOrder()">
-            🛒 Place Order on WhatsApp
+
+        <button
+            class="place-order"
+            onclick="placeOrder()"
+        >
+            📱 Place Order on WhatsApp
         </button>
 
     </div>
 
 </div>
 
+
 <footer>
 
     <h3>🐔 Srinivas Chicken</h3>
 
-    <p>Fresh Chicken • Quality • Best Service</p>
+    <p>FK Palem</p>
 
-    <p>📍 FK Palem | 📞 9666709655</p>
+    <p>📞 9666709655</p>
+
+    <p>Fresh Chicken • Quality Service</p>
 
 </footer>
 
+
 <script>
+
+let prices = {
+    chicken:260,
+    bontha:340,
+    pharam:250,
+    boneless:300,
+    legs:50,
+    wings:40
+};
 
 let cart = [];
 
-function addMoneyChicken(price, grams) {
 
-    cart.push({
-        name: "Chicken ₹" + price,
-        price: price,
-        quantity: 1,
-        unit: grams + "g"
-    });
+/* LOAD DAILY PRICES */
 
-    updateCart();
+async function loadPrices(){
+
+    try{
+
+        const response = await fetch("/api/prices");
+
+        if(!response.ok){
+            throw new Error("Price loading failed");
+        }
+
+        prices = await response.json();
+
+    }catch(error){
+
+        console.log("Using default prices");
+
+    }
+
+    renderProducts();
+
+    updateBill();
+
 }
 
-function addProduct(name, price, unit) {
 
-    let existing = cart.find(item => item.name === name);
+/* PRODUCT CARD */
 
-    if (existing) {
-        existing.quantity++;
-    } else {
+function productCard(title, price, unit, options){
+
+    return `
+
+        <div class="product">
+
+            <h3>${title}</h3>
+
+            <div class="price">
+                ₹${price} ${unit}
+            </div>
+
+            <div class="options">
+
+                ${options.map(option => `
+
+                    <button
+                        onclick='addItem(${JSON.stringify(option.name)}, ${option.price}, ${JSON.stringify(option.unit)})'
+                    >
+                        ${option.label}
+                    </button>
+
+                `).join("")}
+
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+/* RENDER PRODUCTS */
+
+function renderProducts(){
+
+    const chicken = prices.chicken;
+    const bontha = prices.bontha;
+
+    const chickenOptions = [
+
+        {
+            name:"Chicken ₹50",
+            price:50,
+            unit:"~"+Math.round(50/chicken*1000)+"g",
+            label:"₹50 (~"+Math.round(50/chicken*1000)+"g)"
+        },
+
+        {
+            name:"Chicken ₹100",
+            price:100,
+            unit:"~"+Math.round(100/chicken*1000)+"g",
+            label:"₹100 (~"+Math.round(100/chicken*1000)+"g)"
+        },
+
+        {
+            name:"Chicken ₹150",
+            price:150,
+            unit:"~"+Math.round(150/chicken*1000)+"g",
+            label:"₹150 (~"+Math.round(150/chicken*1000)+"g)"
+        },
+
+        {
+            name:"Chicken ₹200",
+            price:200,
+            unit:"~"+Math.round(200/chicken*1000)+"g",
+            label:"₹200 (~"+Math.round(200/chicken*1000)+"g)"
+        },
+
+        {
+            name:"Chicken ₹250",
+            price:250,
+            unit:"~"+Math.round(250/chicken*1000)+"g",
+            label:"₹250 (~"+Math.round(250/chicken*1000)+"g)"
+        },
+
+        {
+            name:"½ KG Chicken",
+            price:chicken/2,
+            unit:"500g",
+            label:"½ KG - ₹"+(chicken/2)
+        },
+
+        {
+            name:"1 KG Chicken",
+            price:chicken,
+            unit:"1kg",
+            label:"1 KG - ₹"+chicken
+        }
+
+    ];
+
+
+    const bonthaOptions = [
+
+        {
+            name:"Bontha Kodi ₹100",
+            price:100,
+            unit:"~"+Math.round(100/bontha*1000)+"g",
+            label:"₹100 (~"+Math.round(100/bontha*1000)+"g)"
+        },
+
+        {
+            name:"Bontha Kodi ₹150",
+            price:150,
+            unit:"~"+Math.round(150/bontha*1000)+"g",
+            label:"₹150 (~"+Math.round(150/bontha*1000)+"g)"
+        },
+
+        {
+            name:"Bontha Kodi ₹200",
+            price:200,
+            unit:"~"+Math.round(200/bontha*1000)+"g",
+            label:"₹200 (~"+Math.round(200/bontha*1000)+"g)"
+        },
+
+        {
+            name:"Bontha Kodi ₹250",
+            price:250,
+            unit:"~"+Math.round(250/bontha*1000)+"g",
+            label:"₹250 (~"+Math.round(250/bontha*1000)+"g)"
+        },
+
+        {
+            name:"½ KG Bontha Chicken",
+            price:bontha/2,
+            unit:"500g",
+            label:"½ KG - ₹"+(bontha/2)
+        },
+
+        {
+            name:"1 KG Bontha Kodi",
+            price:bontha,
+            unit:"1kg",
+            label:"1 KG - ₹"+bontha
+        }
+
+    ];
+
+
+    const pharamOptions = [
+
+        {
+            name:"Pharam Kodi",
+            price:prices.pharam,
+            unit:"1 hen",
+            label:"₹"+prices.pharam+" / Hen"
+        }
+
+    ];
+
+
+    const bonelessOptions = [
+
+        {
+            name:"Boneless Chicken",
+            price:prices.boneless,
+            unit:"1kg",
+            label:"1 KG - ₹"+prices.boneless
+        }
+
+    ];
+
+
+    const legsOptions = [
+
+        {
+            name:"Chicken Legs",
+            price:prices.legs,
+            unit:"1 portion",
+            label:"₹"+prices.legs
+        }
+
+    ];
+
+
+    const wingsOptions = [
+
+        {
+            name:"Chicken Wings",
+            price:prices.wings,
+            unit:"1 portion",
+            label:"₹"+prices.wings
+        }
+
+    ];
+
+
+    document.getElementById("products").innerHTML =
+
+        productCard(
+            "🐔 Broiler Chicken",
+            chicken,
+            "/ kg",
+            chickenOptions
+        )
+
+        +
+
+        productCard(
+            "🍗 Bontha Kodi",
+            bontha,
+            "/ kg",
+            bonthaOptions
+        )
+
+        +
+
+        productCard(
+            "🐔 Pharam Kodi",
+            prices.pharam,
+            "/ hen",
+            pharamOptions
+        )
+
+        +
+
+        productCard(
+            "🍗 Boneless Chicken",
+            prices.boneless,
+            "/ kg",
+            bonelessOptions
+        )
+
+        +
+
+        productCard(
+            "🍗 Chicken Legs",
+            prices.legs,
+            "",
+            legsOptions
+        )
+
+        +
+
+        productCard(
+            "🍗 Chicken Wings",
+            prices.wings,
+            "",
+            wingsOptions
+        );
+
+}
+
+
+/* ADD ITEM */
+
+function addItem(name, price, unit){
+
+    const existing = cart.find(
+        item => item.name === name
+    );
+
+    if(existing){
+
+        existing.qty++;
+
+    }else{
+
         cart.push({
-            name: name,
-            price: price,
-            quantity: 1,
-            unit: unit
+            name:name,
+            price:Number(price),
+            unit:unit,
+            qty:1
         });
+
     }
 
     updateCart();
+
 }
 
-function decreaseItem(index) {
 
-    if (cart[index].quantity > 1) {
-        cart[index].quantity--;
-    } else {
-        cart.splice(index, 1);
+/* CHANGE QUANTITY */
+
+function changeQty(index, amount){
+
+    cart[index].qty += amount;
+
+    if(cart[index].qty <= 0){
+
+        cart.splice(index,1);
+
     }
 
     updateCart();
+
 }
 
-function increaseItem(index) {
 
-    cart[index].quantity++;
+/* REMOVE ITEM */
+
+function removeItem(index){
+
+    cart.splice(index,1);
+
     updateCart();
+
 }
 
-function getItemsTotal() {
 
-    let total = 0;
+/* UPDATE CART */
 
-    cart.forEach(item => {
-        total += item.price * item.quantity;
-    });
+function updateCart(){
 
-    return total;
-}
-
-function calculateDeliveryCharge() {
-
-    let orderType =
-        document.querySelector(
-            'input[name="orderType"]:checked'
-        ).value;
-
-    let itemsTotal = getItemsTotal();
-
-    if (orderType === "Pickup") {
-        return 0;
-    }
-
-    if (itemsTotal < 150) {
-        return 15;
-    }
-
-    return 0;
-}
-
-function updateCart() {
-
-    let cartContainer =
+    const cartItems =
         document.getElementById("cartItems");
 
-    if (cart.length === 0) {
+    if(cart.length === 0){
 
-        cartContainer.innerHTML =
-            '<div class="empty">Your cart is empty</div>';
+        cartItems.innerHTML =
+            `<div class="empty">Your cart is empty</div>`;
 
-    } else {
+    }else{
 
-        cartContainer.innerHTML = "";
+        cartItems.innerHTML = cart.map(
+            (item,index) => `
 
-        cart.forEach((item, index) => {
+            <div class="cart-item">
 
-            let itemTotal =
-                item.price * item.quantity;
+                <div>
 
-            cartContainer.innerHTML += `
+                    <b>${item.name}</b>
 
-                <div class="cart-item">
+                    <br>
 
-                    <div>
-                        <b>${item.name}</b><br>
-                        ${item.unit} × ${item.quantity}<br>
-                        ₹${itemTotal}
-                    </div>
+                    ₹${item.price} × ${item.qty}
 
-                    <div>
-                        <button onclick="decreaseItem(${index})">−</button>
-                        <button onclick="increaseItem(${index})">+</button>
-                    </div>
+                    ${item.unit ? " ("+item.unit+")" : ""}
 
                 </div>
 
-            `;
+                <div>
 
-        });
+                    <button
+                        class="remove"
+                        onclick="changeQty(${index},-1)"
+                    >
+                        −
+                    </button>
+
+                    <b style="margin:0 8px">
+                        ${item.qty}
+                    </b>
+
+                    <button
+                        class="remove"
+                        onclick="changeQty(${index},1)"
+                    >
+                        +
+                    </button>
+
+                    <button
+                        class="remove"
+                        onclick="removeItem(${index})"
+                        style="margin-left:5px"
+                    >
+                        Remove
+                    </button>
+
+                </div>
+
+            </div>
+
+        `
+        ).join("");
+
     }
+
+
+    let count = 0;
+
+    cart.forEach(item => {
+        count += item.qty;
+    });
+
+    document.getElementById("cartCount").textContent =
+        count;
 
     updateBill();
+
 }
 
-function updateBill() {
 
-    let itemsTotal = getItemsTotal();
+/* GET ORDER TYPE */
 
-    let deliveryCharge =
-        calculateDeliveryCharge();
+function getOrderType(){
 
-    let finalTotal =
-        itemsTotal + deliveryCharge;
-
-    document.getElementById("itemsTotal").innerText =
-        "₹" + itemsTotal;
-
-    if (deliveryCharge === 0) {
-
-        let orderType =
-            document.querySelector(
-                'input[name="orderType"]:checked'
-            ).value;
-
-        if (orderType === "Delivery" && itemsTotal >= 150) {
-
-            document.getElementById("deliveryCharge").innerHTML =
-                '<span class="delivery-free">FREE</span>';
-
-        } else {
-
-            document.getElementById("deliveryCharge").innerText =
-                "₹0";
-        }
-
-    } else {
-
-        document.getElementById("deliveryCharge").innerText =
-            "₹" + deliveryCharge;
-    }
-
-    document.getElementById("finalTotal").innerText =
-        "₹" + finalTotal;
-}
-
-function updateDeliveryUI() {
-
-    let orderType =
+    const selected =
         document.querySelector(
             'input[name="orderType"]:checked'
-        ).value;
+        );
 
-    let areaBox =
-        document.getElementById("deliveryAreaBox");
+    return selected ? selected.value : "delivery";
 
-    if (orderType === "Delivery") {
-        areaBox.style.display = "block";
-    } else {
-        areaBox.style.display = "none";
-    }
-
-    updateBill();
 }
 
-function showPaymentInfo() {
 
-    let method =
-        document.getElementById("paymentMethod").value;
+/* UPDATE BILL */
 
-    let info =
-        document.getElementById("paymentInfo");
+function updateBill(){
 
-    if (method === "UPI") {
-        info.style.display = "block";
-    } else {
-        info.style.display = "none";
+    let itemsTotal = 0;
+
+    cart.forEach(item => {
+
+        itemsTotal +=
+            item.price * item.qty;
+
+    });
+
+
+    const orderType = getOrderType();
+
+    let deliveryCharge = 0;
+
+    const sunday =
+        new Date().getDay() === 0;
+
+
+    if(orderType === "delivery"){
+
+        if(sunday){
+
+            if(itemsTotal > 0 && itemsTotal < 150){
+
+                deliveryCharge = 15;
+
+            }
+
+        }else{
+
+            deliveryCharge = 0;
+
+        }
+
     }
+
+
+    document.getElementById("itemsTotal").textContent =
+        Math.round(itemsTotal);
+
+
+    document.getElementById("deliveryCharge").textContent =
+        deliveryCharge;
+
+
+    document.getElementById("finalTotal").textContent =
+        Math.round(itemsTotal + deliveryCharge);
+
+
+    const status =
+        document.getElementById("deliveryStatus");
+
+
+    if(orderType === "pickup"){
+
+        status.innerHTML =
+            "🏪 Shop Pickup selected — Pickup is available every day. Delivery charge: ₹0.";
+
+    }else{
+
+        if(sunday){
+
+            status.innerHTML =
+                "🚚 Sunday delivery is available in the listed areas. ₹15 below ₹150, FREE at ₹150+.";
+
+        }else{
+
+            status.innerHTML =
+                "⚠️ Delivery is available only on Sunday. Please select Shop Pickup today.";
+
+        }
+
+    }
+
+
+    const deliveryFields =
+        document.getElementById("deliveryFields");
+
+
+    if(orderType === "delivery"){
+
+        deliveryFields.style.display = "block";
+
+    }else{
+
+        deliveryFields.style.display = "none";
+
+    }
+
 }
 
-async function placeOrder() {
 
-    if (cart.length === 0) {
+/* UPI */
+
+function showUPI(){
+
+    const payment =
+        document.getElementById("payment").value;
+
+    const box =
+        document.getElementById("upiBox");
+
+    if(payment === "UPI"){
+
+        box.style.display = "block";
+
+    }else{
+
+        box.style.display = "none";
+
+    }
+
+}
+
+
+/* PLACE ORDER */
+
+async function placeOrder(){
+
+    if(cart.length === 0){
 
         alert("Please add items to your cart.");
+
         return;
+
     }
 
-    let name =
+
+    const name =
         document.getElementById("name").value.trim();
 
-    let phone =
+    const phone =
         document.getElementById("phone").value.trim();
 
-    let orderType =
-        document.querySelector(
-            'input[name="orderType"]:checked'
-        ).value;
 
-    let area =
-        document.getElementById("deliveryArea").value;
+    if(!name){
 
-    let address =
-        document.getElementById("address").value.trim();
-
-    let paymentMethod =
-        document.getElementById("paymentMethod").value;
-
-    if (!name) {
         alert("Please enter your name.");
+
         return;
+
     }
 
-    if (!phone || phone.length !== 10) {
+
+    if(!/^[0-9]{10}$/.test(phone)){
+
         alert("Please enter a valid 10 digit phone number.");
+
         return;
+
     }
 
-    if (orderType === "Delivery") {
 
-        if (!area) {
+    const orderType =
+        getOrderType();
+
+
+    const sunday =
+        new Date().getDay() === 0;
+
+
+    if(orderType === "delivery" && !sunday){
+
+        alert(
+            "Delivery is available only on Sunday. Please select Shop Pickup."
+        );
+
+        return;
+
+    }
+
+
+    let area = "";
+
+    let address = "";
+
+
+    if(orderType === "delivery"){
+
+        area =
+            document.getElementById("area").value;
+
+        address =
+            document.getElementById("address").value.trim();
+
+
+        if(!area){
+
             alert("Please select your delivery area.");
+
             return;
+
         }
 
-        if (!address) {
-            alert("Please enter your delivery address.");
+
+        if(!address){
+
+            alert("Please enter your full address.");
+
             return;
+
         }
+
     }
 
-    let itemsTotal = getItemsTotal();
 
-    let deliveryCharge =
-        calculateDeliveryCharge();
+    const payment =
+        document.getElementById("payment").value;
 
-    let finalTotal =
+
+    let itemsTotal = 0;
+
+    cart.forEach(item => {
+
+        itemsTotal +=
+            item.price * item.qty;
+
+    });
+
+
+    let deliveryCharge = 0;
+
+
+    if(orderType === "delivery" && sunday){
+
+        if(itemsTotal < 150){
+
+            deliveryCharge = 15;
+
+        }
+
+    }
+
+
+    const finalTotal =
         itemsTotal + deliveryCharge;
 
-    let orderId =
-        "SC" + Date.now();
 
-    let itemsText = cart.map(item => {
+    const order = {
 
-        return item.name +
-            " - " +
-            item.unit +
-            " × " +
-            item.quantity +
-            " = ₹" +
-            (item.price * item.quantity);
+        customerName:name,
 
-    }).join("\n");
+        phone:phone,
 
-    let orderData = {
+        orderType:orderType,
 
-        orderId,
-        name,
-        phone,
-        orderType,
+        area:area,
 
-        deliveryArea:
-            orderType === "Delivery"
-                ? area
-                : "Shop Pickup",
+        address:address,
 
-        address:
-            orderType === "Delivery"
-                ? address
-                : "",
+        payment:payment,
 
-        paymentMethod,
-        items: cart,
-        itemsTotal,
-        deliveryCharge,
-        finalTotal,
-        date: new Date().toISOString()
+        items:cart,
+
+        itemsTotal:Math.round(itemsTotal),
+
+        deliveryCharge:deliveryCharge,
+
+        finalTotal:Math.round(finalTotal)
+
     };
 
-    try {
 
-        await fetch("/api/orders", {
+    try{
 
-            method: "POST",
+        const response =
+            await fetch("/api/orders",{
 
-            headers: {
-                "Content-Type": "application/json"
-            },
+                method:"POST",
 
-            body: JSON.stringify(orderData)
+                headers:{
+                    "Content-Type":"application/json"
+                },
+
+                body:JSON.stringify(order)
+
+            });
+
+
+        const result =
+            await response.json();
+
+
+        if(!response.ok){
+
+            throw new Error(
+                result.message || "Order failed"
+            );
+
+        }
+
+
+        let message =
+            "🐔 *SRINIVAS CHICKEN ORDER*%0A%0A";
+
+
+        message +=
+            "👤 Name: " +
+            encodeURIComponent(name) +
+            "%0A";
+
+
+        message +=
+            "📞 Phone: " +
+            encodeURIComponent(phone) +
+            "%0A";
+
+
+        message +=
+            "🏪 Order Type: " +
+            encodeURIComponent(orderType) +
+            "%0A";
+
+
+        if(orderType === "delivery"){
+
+            message +=
+                "📍 Area: " +
+                encodeURIComponent(area) +
+                "%0A";
+
+            message +=
+                "🏠 Address: " +
+                encodeURIComponent(address) +
+                "%0A";
+
+        }
+
+
+        message += "%0A🍗 *ITEMS*%0A";
+
+
+        cart.forEach(item => {
+
+            const lineTotal =
+                item.price * item.qty;
+
+            message +=
+                encodeURIComponent(
+                    item.name +
+                    " × " +
+                    item.qty +
+                    " = ₹" +
+                    lineTotal
+                ) +
+                "%0A";
 
         });
 
-    } catch (error) {
 
-        console.log("Order save error:", error);
+        message +=
+            "%0A🧾 Items Total: ₹" +
+            Math.round(itemsTotal);
+
+
+        message +=
+            "%0A🚚 Delivery Charge: ₹" +
+            deliveryCharge;
+
+
+        message +=
+            "%0A💰 *FINAL TOTAL: ₹" +
+            Math.round(finalTotal) +
+            "*";
+
+
+        message +=
+            "%0A💳 Payment: " +
+            encodeURIComponent(payment);
+
+
+        if(payment === "UPI"){
+
+            message +=
+                "%0A📱 UPI ID: Q669101380@ybl";
+
+            message +=
+                "%0APlease send payment screenshot on WhatsApp.";
+
+        }
+
+
+        message +=
+            "%0A%0AThank you! 🐔";
+
+
+        const whatsappNumber =
+            "919666709655";
+
+
+        const whatsappURL =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            message;
+
+
+        window.location.href =
+            whatsappURL;
+
+
+    }catch(error){
+
+        console.error(error);
+
+        alert(
+            "Could not place the order. Please try again."
+        );
 
     }
 
-    let message =
-
-`🐔 *SRINIVAS CHICKEN ORDER*
-
-🆔 Order ID: ${orderId}
-
-👤 Customer: ${name}
-
-📞 Phone: ${phone}
-
-📦 Order Type: ${orderType}
-
-📍 Location: ${
-    orderType === "Delivery"
-        ? area
-        : "Shop Pickup"
 }
 
-🏠 Address: ${
-    orderType === "Delivery"
-        ? address
-        : "N/A"
-}
 
-🍗 *ITEMS*
+/* START */
 
-${itemsText}
-
-💰 Items Total: ₹${itemsTotal}
-
-🚚 Delivery Charge: ${
-    deliveryCharge === 0
-        ? "FREE"
-        : "₹" + deliveryCharge
-}
-
-💵 *FINAL TOTAL: ₹${finalTotal}*
-
-💳 Payment: ${paymentMethod}
-
-Thank you for ordering from Srinivas Chicken! 🐔`;
-
-    let whatsappNumber = "919666709655";
-
-    let whatsappURL =
-        "https://wa.me/" +
-        whatsappNumber +
-        "?text=" +
-        encodeURIComponent(message);
-
-    window.open(whatsappURL, "_blank");
-}
-
-updateDeliveryUI();
-updateCart();
+loadPrices();
 
 </script>
 
