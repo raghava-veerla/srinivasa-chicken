@@ -411,7 +411,7 @@ footer{
 
             <div class="bill-row">
                 <span>Delivery Charge</span>
-                <span>₹<span id="deliveryCharge">15</span></span>
+                <span>₹<span id="deliveryCharge">0</span></span>
             </div>
 
             <div class="final">
@@ -1050,23 +1050,18 @@ function updateBill(){
 
     const sunday =
         new Date().getDay() === 0;
+        if(orderType === "delivery"){
 
+    if(itemsTotal > 0 && itemsTotal < 150){
 
-    if(orderType === "delivery"){
-
-        if(sunday){
-
-            if(itemsTotal > 0 && itemsTotal < 150){
-
-                deliveryCharge = 15;
-
-            }
-
-    
-
-        }
+        deliveryCharge = 15;
 
     }
+
+}
+
+
+   
 
 
     document.getElementById("itemsTotal").textContent =
