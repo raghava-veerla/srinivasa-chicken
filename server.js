@@ -1,83 +1,179 @@
 const express = require("express");
 const fs = require("fs");
-const session = require("express-session");
+const path = require("path");
 
 const app = express();
 
-
-
-
 app.use(express.json());
 
-app.use(session({
-    secret: "call me",
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-        httpOnly: true,
-        sameSite: "lax"
+const pricesFile = path.join(__dirname, "prices.json");
+const ordersFile = path.join(__dirname, "orders.json");
+
+const DEFAULT_PRICES = {
+    chicken: 260,
+    bontha: 340,
+    pharam: 250,
+    boneless: 300,
+    legs: 50,
+    wings: 40
+};
+
+function readPrices() {
+    try {
+        if (fs.existsSync(pricesFile)) {
+            return {
+                ...DEFAULT_PRICES,
+                ...JSON.parse(
+                    fs.readFileSync(pricesFile, "utf8")
+                )
+            };
+        }
+    } catch (error) {
+        console.log("Price file error:", error);
     }
-}));
+
+    return DEFAULT_PRICES;
+}
+
+function savePrices(prices) {
+    fs.writeFileSync(
+        pricesFile,
+        JSON.stringify(prices, null, 2)
+    );
+}
+
+if (!fs.existsSync(pricesFile)) {
+    savePrices(DEFAULT_PRICES);
+}
 
 
-// ===============================
-// ADMIN LOGIN
-// ===============================
+/* CUSTOMER WEBSITE */
 
-
-
-// ===============================
-// ADMIN SECURITY
-// ===============================
-
-
-// ===============================
-// CUSTOMER PAGE
-// ===============================
+app.get("/", (req, res) => {
+    res.sendFile(
+        path.join(__dirname, "shop.html")
+    );
+});
 
 app.get("/shop.html", (req, res) => {
-    res.sendFile(__dirname + "/shop.html");
+    res.sendFile(
+        path.join(__dirname, "shop.html")
+    );
 });
 
 
-// ===============================
-// ADMIN LOGIN PAGE
-// ===============================
+/* ADMIN PRICE PAGE */
+
+app.get("/admin.html", (req, res) => {
+    res.sendFile(
+        path.join(__dirname, "admin.html")
+    );
+});
 
 
+/* GET CURRENT PRICES */
 
-// ===============================
-// PROTECTED ADMIN PAGE
-// ===============================
+app.get("/api/prices", (req, res) => {
+    res.json(readPrices());
+});
 
 
+/* UPDATE PRICES */
 
-// ===============================
-// CUSTOMER PLACES ORDER
-// ===============================
+app.post("/api/prices", (req, res) => {
+
+    const password =
+        req.headers["x-owner-password"];
+
+    if (password !== "Srinivas@2026") {
+
+        return res.status(401).json({
+            success: false,
+            message: "Wrong owner password"
+        });
+
+    }
+
+    const oldPrices = readPrices();
+
+    const keys = [
+        "chicken",
+        "bontha",
+        "pharam",
+        "boneless",
+        "legs",
+        "wings"
+    ];
+
+    const updatedPrices = {
+        ...oldPrices
+    };
+
+    for (const key of keys) {
+
+        const value = Number(req.body[key]);
+
+        if (
+            !Number.isFinite(value) ||
+            value < 0
+        ) {
+
+            return res.status(400).json({
+                success: false,
+                message: "Invalid price: " + key
+            });
+
+        }
+
+        updatedPrices[key] = value;
+    }
+
+    savePrices(updatedPrices);
+
+    res.json({
+        success: true,
+        prices: updatedPrices
+    });
+
+});
+
+
+/* SAVE ORDERS */
 
 app.post("/api/orders", (req, res) => {
 
     const order = {
+
         id: Date.now(),
-        date: new Date().toLocaleString(),
+
+        date: new Date().toLocaleString("en-IN"),
+
         status: "Pending",
+
         ...req.body
+
     };
 
     let orders = [];
 
-    const ordersFile = __dirname + "/orders.json";
+    try {
 
-    if (fs.existsSync(ordersFile)) {
+        if (fs.existsSync(ordersFile)) {
 
-        try {
             orders = JSON.parse(
-                fs.readFileSync(ordersFile, "utf8")
+                fs.readFileSync(
+                    ordersFile,
+                    "utf8"
+                )
             );
-        } catch {
-            orders = [];
+
         }
+
+    } catch (error) {
+
+        console.log("Orders file error");
+
+        orders = [];
 
     }
 
@@ -85,41 +181,50 @@ app.post("/api/orders", (req, res) => {
 
     fs.writeFileSync(
         ordersFile,
-        JSON.stringify(orders, null, 2)
+        JSON.stringify(
+            orders,
+            null,
+            2
+        )
     );
 
     res.json({
         success: true,
-        message: "Order placed successfully!",
         orderId: order.id
     });
+
 });
 
 
-// ===============================
-// ADMIN GETS ORDERS
-// ===============================
+/* START SERVER */
 
+const PORT =
+    process.env.PORT || 3000;
 
-// ===============================
-// ADMIN CHANGES ORDER STATUS
-// ===============================
+app.listen(
+    PORT,
+    "0.0.0.0",
+    () => {
 
+        console.log(
+            "================================"
+        );
 
-// ===============================
-// START SERVER
-// ===============================
+        console.log(
+            "🐔 Srinivas Chicken Website"
+        );
 
-// ===============================
-// START SERVER
-// ===============================
-app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/shop.html");
-});
-const PORT = process.env.PORT || 3000;
+        console.log(
+            "Server running on port " + PORT
+        );
 
-app.listen(PORT, "0.0.0.0", () => {
-    console.log(
-        `Srinivas Chicken website running on port ${PORT}`
-    );
-});
+        console.log(
+            "Open: http://localhost:" + PORT
+        );
+
+        console.log(
+            "================================"
+        );
+
+    }
+);
